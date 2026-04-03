@@ -1,0 +1,12 @@
+2. Pipeline de Preprocesamiento para Datos con Outliers
+El Problema:
+Tienes un dataset financiero con variables que siguen distribuciones con colas muy largas (muchos valores atípicos). Un escalado estándar (StandardScaler) no funcionaría bien. Debes construir un flujo que limpie, transforme y reduzca la dimensionalidad.
+
+Tu Misión:
+Crea una función que aplique un PowerTransformer (para normalizar distribuciones sesgadas) seguido de una reducción de componentes con PCA y devuelva los datos transformados.
+
+Nombre de la función: procesar_datos_financieros
+
+Argumentos: df (pd.DataFrame), n_componentes (int)
+
+Tipo de objetivo: np.ndarray (la matriz de características procesada)
