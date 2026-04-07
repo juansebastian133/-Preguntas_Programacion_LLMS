@@ -22,7 +22,7 @@ import numpy as np
 import random
 from sklearn.datasets import make_classification
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_preparar_datos_1():
     # 🔹 1. Generar dataset aleatorio
     n_muestras = random.randint(50, 200)
     n_features = random.randint(5, 20)
@@ -53,7 +53,7 @@ def generar_caso_de_uso_preparar_datos():
 
     return input_data, output_data
 
-inp, out = generar_caso_de_uso_preparar_datos()
+inp, out = generar_caso_de_uso_preparar_datos_1()
 
 print("INPUT:")
 print(inp)
