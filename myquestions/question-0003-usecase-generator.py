@@ -33,7 +33,7 @@ def entrenar_pronostico_lasso(df, target_col, alpha_lasso):
 # =========================================================
 # GENERADOR DE CASOS DE USO (lo que te piden en el ejercicio)
 # =========================================================
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_preparar_datos_3():
     # 1. Generar tamaño aleatorio
     n = random.randint(30, 100)
 
@@ -92,7 +92,7 @@ def comprobar_caso_de_uso(input_data, output_esperado):
 # EJECUCIÓN DE PRUEBA
 # =========================================================
 if __name__ == "__main__":
-    input_data, output_data = generar_caso_de_uso_preparar_datos()
+    input_data, output_data = generar_caso_de_uso_preparar_datos_3()
 
     print("===== INPUT GENERADO =====")
     print("Alpha:", input_data["alpha_lasso"])
