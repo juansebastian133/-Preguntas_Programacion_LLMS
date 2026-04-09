@@ -36,7 +36,7 @@ def reporte_especifico_clases(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
 # =========================================================
 # 2. GENERADOR DE CASOS DE USO ALEATORIOS
 # =========================================================
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_preparar_datos_4():
     """
     Genera inputs aleatorios y su output esperado para probar la función.
     """
@@ -80,7 +80,7 @@ def generar_caso_de_uso_preparar_datos():
 # 3. FUNCIÓN PARA COMPROBAR AUTOMÁTICAMENTE
 # =========================================================
 def probar_caso():
-    input_data, output_esperado = generar_caso_de_uso_preparar_datos()
+    input_data, output_esperado = generar_caso_de_uso_preparar_datos_4()
 
     resultado = reporte_especifico_clases(
         input_data["y_true"],
