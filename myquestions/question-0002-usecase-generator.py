@@ -26,7 +26,7 @@ def procesar_datos_financieros(df: pd.DataFrame, n_componentes: int) -> np.ndarr
 # =========================================================
 # 2. GENERADOR DE CASOS DE USO ALEATORIOS
 # =========================================================
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_preparar_datos_2():
     # 🔹 Tamaño aleatorio del dataset
     n_filas = random.randint(20, 100)
     n_columnas = random.randint(3, 8)
@@ -95,5 +95,5 @@ def comprobar_caso_de_uso(input_data, output_esperado):
 # 4. EJECUCIÓN DE PRUEBA
 # =========================================================
 if __name__ == "__main__":
-    input_data, output_data = generar_caso_de_uso_preparar_datos()
+    input_data, output_data = generar_caso_de_uso_preparar_datos_2()
     comprobar_caso_de_uso(input_data, output_data)
