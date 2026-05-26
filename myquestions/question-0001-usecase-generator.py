@@ -1,23 +1,6 @@
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV
-
-def optimizar_svm_grid(X, y, lista_c, cv_folds):
-    modelo = SVC()
-
-    param_grid = {'C': lista_c}
-
-    grid = GridSearchCV(modelo, param_grid, cv=cv_folds)
-    grid.fit(X, y)
-
-    resultado = {
-        'mejor_c': grid.best_params_['C'],
-        'mejor_score': grid.best_score_,
-        'modelo_final': grid.best_estimator_
-    }
-
-    return resultado
-
 import numpy as np
 import random
 from sklearn.datasets import make_classification
@@ -52,6 +35,22 @@ def generar_caso_de_uso_preparar_datos_1():
     output_data = optimizar_svm_grid(X, y, lista_c, cv_folds)
 
     return input_data, output_data
+
+def optimizar_svm_grid(X, y, lista_c, cv_folds):
+    modelo = SVC()
+
+    param_grid = {'C': lista_c}
+
+    grid = GridSearchCV(modelo, param_grid, cv=cv_folds)
+    grid.fit(X, y)
+
+    resultado = {
+        'mejor_c': grid.best_params_['C'],
+        'mejor_score': grid.best_score_,
+        'modelo_final': grid.best_estimator_
+    }
+
+    return resultado
 
 inp, out = generar_caso_de_uso_preparar_datos_1()
 
