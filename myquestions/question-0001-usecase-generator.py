@@ -13,7 +13,7 @@ def generar_caso_de_uso_preparar_datos_1():
     X, y = make_classification(
         n_samples=n_muestras,
         n_features=n_features,
-        n_informative=random.randint(2, n_features),
+        n_informative=random.randint(2, n_features -3),
         n_classes=2
     )
 
