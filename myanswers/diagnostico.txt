@@ -1,0 +1,31 @@
+DIAGNÓSTICO – Pregunta 434
+pipeline_seleccion_modelo
+
+La solución implementada reproduce exactamente los pasos definidos por el generador de casos de uso:
+
+Escalado de variables mediante StandardScaler.
+Selección de características mediante SelectKBest(score_func=f_classif, k=k).
+Obtención de las variables seleccionadas usando get_support(indices=True).
+Entrenamiento de un RandomForestClassifier.
+Devolución de las variables seleccionadas y las importancias calculadas por el modelo.
+
+Sin embargo, el generador de casos de uso presenta un problema de reproducibilidad.
+
+En las líneas donde se crea y entrena el modelo:
+
+model = RandomForestClassifier()
+model.fit(X_selected, y)
+
+(el número exacto de línea debe verificarse en el fichero original del generador),
+
+no se especifica el parámetro random_state.
+
+RandomForestClassifier utiliza aleatoriedad interna para construir los árboles del bosque. Como consecuencia, las importancias obtenidas mediante:
+
+model.feature_importances_
+
+pueden variar entre ejecuciones incluso utilizando exactamente los mismos datos de entrada.
+
+La implementación entregada reproduce fielmente la lógica del generador, incluyendo la creación del RandomForestClassifier sin modificar sus parámetros. No obstante, si el validador compara exactamente el contenido del vector de importancias generado por dos ejecuciones distintas, puede producirse una discrepancia debido a la naturaleza aleatoria del algoritmo y no a un error en la solución.
+
+Por este motivo, cualquier clasificación como "answers incorrect" o "usecase generator errors" estaría causada por la falta de control de la aleatoriedad en el generador y no por una diferencia lógica respecto al procedimiento especificado.
